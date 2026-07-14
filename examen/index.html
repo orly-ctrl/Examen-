@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Biblioteca</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Registro de Libro</h1>
+
+        <section class="card form-card">
+            <form id="library-form">
+                <div class="form-group">
+                    <label for="title">Título</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="autor">Autor</label>
+                    <input type="text" id="autor" name="autor" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="Año">Año</label>
+                        <input type="number" id="year" name="year" min="1900" max="2026" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Fecha">Fecha de ingreso</label>
+                        <input type="date" id="entryDate" name="entryDate" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="registrar">Registrado por</label>
+                    <input type="text" id="registrar" name="registrar" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="genre">Género</label>
+                    <select id="genre" name="genre" required>
+                        <option value="">Selecciona un género</option>
+                        <option value="Ficción">Ficción</option>
+                        <option value="No ficción">No ficción</option>
+                        <option value="Infantil">Infantil</option>
+                        <option value="Ciencia">Ciencia</option>
+                        <option value="Historia">Historia</option>
+                        <option value="Arte">Arte</option>
+                        <option value="Tecnologia">Tecnologia</option>
+                        <option value="Literatura">Literatura</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Notas</label>
+                    <textarea id="notas" name="notas" rows="3" placeholder="Comentarios sobre el libro"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn" id="submit-btn">Agregar libro</button>
+                    <button type="button" class="btn btn-secondary" id="cancelar-edicion" hidden>Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="card list-card">
+            <div class="list-header">
+                <h2>Libros registrados</h2>
+                <span id="book-count">0 libros</span>
+            </div>
+            <div id="book-list" class="book-list">
+                <p class="empty-state">No hay libros registrados aún.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
